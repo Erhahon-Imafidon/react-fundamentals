@@ -16,9 +16,8 @@
       const app = document.getElementById('app')
 
       {/* Creating Components */}
-      function Header(props) {
-        console.log(props)
-        return <h1>{props.title}</h1>
+      function Header({title}) {
+        return <h1>{`Cool ${title}`}</h1>
       }
 
       function HomePage() {
