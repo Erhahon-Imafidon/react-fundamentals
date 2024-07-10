@@ -10,11 +10,27 @@
     <!-- External React Script  -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script type="text/Javascript">
-      // Select the div element with id of app
-          const app = document.getElementById('app')
-          const root = ReactDom.createRoot(app)
-          root.render(<h1>Develop. Preview. Ship</h1>)
+    <!-- Adding a Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById('app')
+
+      {/* Creating Components */}
+      function Header(props) {
+        console.log(props)
+        return <h1>{props.title}</h1>
+      }
+
+      function HomePage() {
+        return(
+          <div>
+             <Header title='React' />
+          </div>
+        )
+      }
+
+      const root = ReactDOM.createRoot(app)
+      root.render(<HomePage />)
     </script>
   </body>
 </html>
