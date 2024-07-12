@@ -32,7 +32,13 @@
       }
 
       function HomePage() {
+        const [likes, setLikes] = React.useState(0)
          const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+         const handleClick = () => {
+           setLikes(likes + 1)
+           console.log(`Increment like a count`)
+         }
         return(
           <div>
              <Header title='React' />
@@ -43,6 +49,8 @@
 
             }
             </ul>
+            <p>{likes}</p>
+            <button onClick={handleClick}>Like</button>
           </div>
         )
       }
